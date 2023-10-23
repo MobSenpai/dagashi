@@ -1,0 +1,117 @@
+{
+  "layer": "top",
+  "modules-left": ["wlr/workspaces", "custom/window-name"],
+  "modules-center": ["custom/playerctl"],
+  "modules-right": [
+    "pulseaudio",
+    "custom/weather",
+    "cpu",
+    "memory",
+    "clock",
+    "tray"
+  ],
+  "backlight": {
+    "device": "amdgpu_b10",
+    "format": "<span color='#94b76c'>{icon}</span> {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "battery": {
+    "format": "<span color='#94b76c'>{icon}</span> {capacity}%",
+    "format-charging": "<span color='#94b76c'></span> {capacity}%",
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""]
+  },
+  "clock": {
+    "format": "<span color='#94b76c'></span><span> {:%a %b %d - %I:%M %p}</span>",
+    "format-alt": "<span color='#94b76c'></span> {:%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "cpu": {
+    "format": "<span color='#94b76c'></span> {usage}%"
+  },
+  "custom/playerctl": {
+    "exec": "playerctl -a metadata --format '{\"text\": \"  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "format": "{icon}<span>{}</span>",
+    "format-icons": {
+      "Paused": "<span color='#ff005f'></span>",
+      "Playing": "<span color='#94b76c'></span>"
+    },
+    "max-length": 30,
+    "on-click": "playerctl play-pause",
+    "on-click-middle": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "return-type": "json"
+  },
+  "custom/window-name": {
+    "exec": "hyprctl activewindow | grep class | awk '{print $2}'",
+    "format": "{}",
+    "interval": 1
+  },
+  "custom/weather": {
+    "exec": "$XDG_CONFIG_HOME/hypr/scripts/weather.sh Patna+India",
+    "interval": 3600,
+    "format": "{}",
+    "return-type": "json",
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": "<span color='#94b76c'>󰍛</span> {}%"
+  },
+
+  "network": {
+    "format-alt": "<span color='#94b76c'></span> {bandwidthTotalBits}",
+    "format-disconnected": "<span color='#94b76c'>󰞃</span> Disconnected",
+    "format-ethernet": "<span color='#94b76c'>󰈀</span> wired",
+    "format-wifi": "<span color='#94b76c'></span> {essid}",
+    "on-click-right": "nm-connection-editor",
+    "tooltip-format": "{essid} {signalStrength}%"
+  },
+  "pulseaudio": {
+    "format": "<span color='#94b76c'>{icon}</span> {volume}%",
+    "format-icons": {
+      "default": ["󰝟", "", "󰕾", ""]
+    },
+    "format-muted": "<span color='#ff005f'>󰝟</span>",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "<span color='#5d73ca'></span> {temperatureC}°C"
+  },
+  "tray": {
+    "reverse-direction": true,
+    "spacing": 6
+  },
+  "wlr/workspaces": {
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "10": "〇",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": ""
+    },
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent_workspaces": {
+      "1": [],
+      "10": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": []
+    }
+  }
+}

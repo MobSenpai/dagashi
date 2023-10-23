@@ -1,0 +1,93 @@
+* {
+  border: none;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-weight: bold;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  font-size: 14px;
+  min-height: 25px;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#backlight,
+#battery,
+#clock,
+#cpu,
+#custom-info-cava,
+#custom-playerctl,
+#custom-weather,
+#memory,
+#network,
+#pulseaudio,
+#temperature,
+#tray {
+  background: @theme_base_color;
+  border-radius: 10px;
+  color: @theme_text_color;
+  margin-right: 15px;
+  margin-top: 15px;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+#custom-window-name {
+  font-weight: normal;
+  color: @theme_text_color;
+  margin-right: 15px;
+  margin-top: 15px;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+@keyframes blink {
+  to {
+    background-color: white;
+    color: black;
+  }
+}
+
+#workspaces {
+  background-color: #0a1417;
+  border-radius: 10px;
+  color: #94b76c;
+  margin-right: 15px;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1px;
+}
+
+#workspaces button {
+  background: #0a1417;
+  color: #dde7d2;
+}
+
+#workspaces button.active {
+  color: #98c379;
+}
+
+#workspaces button.active {
+  color: #98c379;
+}
+
+#workspaces button {
+  background: #0a1417;
+  color: #dde7d2;
+}
+
+#tray {
+  padding-left: 10px;
+  padding-right: 8px;
+}
+
+#battery.warning:not(.charging) {
+  animation-direction: alternate;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-name: blink;
+  animation-timing-function: linear;
+  background: #f38ba8;
+  color: white;
+}
