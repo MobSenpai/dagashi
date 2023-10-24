@@ -1,10 +1,10 @@
 * {
   border: none;
-  font-family: 'JetBrainsMono Nerd Font';
+  border-radius: 0;
+  font-family: 'monospace';
   font-weight: bold;
-  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
   font-size: 14px;
-  min-height: 25px;
+  min-height: 0px;
 }
 
 window#waybar {
@@ -27,7 +27,7 @@ window#waybar {
   border-radius: 10px;
   color: @theme_text_color;
   margin-right: 15px;
-  margin-top: 15px;
+  margin-top: 7px;
   padding-left: 9px;
   padding-right: 9px;
 }
@@ -36,7 +36,7 @@ window#waybar {
   font-weight: normal;
   color: @theme_text_color;
   margin-right: 15px;
-  margin-top: 15px;
+  margin-top: 7px;
   padding-left: 9px;
   padding-right: 9px;
 }
@@ -53,7 +53,7 @@ window#waybar {
   border-radius: 10px;
   color: #94b76c;
   margin-right: 15px;
-  margin-top: 15px;
+  margin-top: 7px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 1px;

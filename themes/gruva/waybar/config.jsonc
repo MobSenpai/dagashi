@@ -1,5 +1,7 @@
 {
   "layer": "top",
+  "position": "top",
+  "height": 35,
   "modules-left": ["wlr/workspaces", "custom/window-name"],
   "modules-center": ["custom/playerctl"],
   "modules-right": ["custom/weather", "cpu", "memory", "clock", "tray"],
