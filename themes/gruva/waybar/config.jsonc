@@ -2,14 +2,7 @@
   "layer": "top",
   "modules-left": ["wlr/workspaces", "custom/window-name"],
   "modules-center": ["custom/playerctl"],
-  "modules-right": [
-    "pulseaudio",
-    "custom/weather",
-    "cpu",
-    "memory",
-    "clock",
-    "tray"
-  ],
+  "modules-right": ["custom/weather", "cpu", "memory", "clock", "tray"],
   "backlight": {
     "device": "amdgpu_b10",
     "format": "<span color='#94b76c'>{icon}</span> {percent}%",
